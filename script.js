@@ -8,10 +8,11 @@ const confirmPassword = document.getElementById('confirmPassword');
 
 // 1. Using `checkValidity()`
 // Checks if the form is valid on submission
+// This sets up an event listener that checks if the form is invalid and executes additional code when it is
 form.addEventListener('submit', (event) => {
     if (!form.checkValidity()) {
         event.preventDefault();
-        form.reportValidity();
+        form.reportValidity(); //if any fields are invalid, it automatically displays validation error messages (browser default messages)
     }
 });
 
@@ -19,7 +20,7 @@ form.addEventListener('submit', (event) => {
 // Custom message if passwords do not match
 confirmPassword.addEventListener('input', () => {
     if (confirmPassword.value !== password.value) {
-        confirmPassword.setCustomValidity("Passwords do not match");
+        confirmPassword.setCustomValidity("Make sure you match your password!!!");
     } else {
         confirmPassword.setCustomValidity(""); // Clear message if valid
     }
