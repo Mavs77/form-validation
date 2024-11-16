@@ -28,6 +28,7 @@ confirmPassword.addEventListener('input', () => {
 
 // 3. Using `reportValidity()`
 // Display messages for individual fields
+// The 'blur' event listener in JS is used to detect when an element loses focus. It is often used with form elements like text inputs, dropdowns, or text areas. If you click inside an input field and then click elsewhere on the page the input field loses focus, triggering the blur event. 
 email.addEventListener('blur', () => {
     if (!email.checkValidity()) {
         email.reportValidity();
@@ -35,9 +36,10 @@ email.addEventListener('blur', () => {
 });
 
 // 4. Using `validity` properties
+// The validity properties are like a built-in checklist the browser uses to see if a form input is OK (valid) or if something is wrong (invalid)
 zipcode.addEventListener('input', () => {
     if (zipcode.validity.patternMismatch) {
-        zipcode.setCustomValidity("Zip code must be 5 digits.");
+        zipcode.setCustomValidity("Zip code must be 5 digits. No more, no less!!!");
     } else {
         zipcode.setCustomValidity("");
     }
