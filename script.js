@@ -36,7 +36,8 @@ email.addEventListener('blur', () => {
 });
 
 // 4. Using `validity` properties
-// The validity properties are like a built-in checklist the browser uses to see if a form input is OK (valid) or if something is wrong (invalid)
+// The validity properties are like a built-in checklist the browser uses to see if a form input is OK (valid) or if something is wrong (invalid). It's a like a yes/no question the browser answers. 
+// The validity properties work hand-in-hand with the HTML attributes you set on your form elements. These attributes acts as rules for what the input should look like or how it should behave, and the validity properties check whether those rules are followed. 
 zipcode.addEventListener('input', () => {
     if (zipcode.validity.patternMismatch) {
         zipcode.setCustomValidity("Zip code must be 5 digits. No more, no less!!!");
